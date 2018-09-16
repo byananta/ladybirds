@@ -24,7 +24,11 @@
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
+<<<<<<< HEAD
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'ladybirds' ), 'ladybirds', '<a href="http://anantapattanayak.com">Ananta Pattanayak</a>' );
+=======
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'ladybirds' ), 'ladybirds', '<a href="http://ananta.pattanayak@gmail.com">Ananta Pattanayak</a>' );
+>>>>>>> a1c1ac8976fcd65d0b6a5ac8180a8bcee91127d0
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

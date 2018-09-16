@@ -13,7 +13,11 @@ A starter theme called ladybirds.
 
 == Description ==
 
+<<<<<<< HEAD
 This is a content marketing brand.
+=======
+This a content marketing brand
+>>>>>>> a1c1ac8976fcd65d0b6a5ac8180a8bcee91127d0
 
 == Installation ==
 
