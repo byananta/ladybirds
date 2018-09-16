@@ -122,6 +122,7 @@ add_action( 'widgets_init', 'ladybirds_widgets_init' );
 function ladybirds_scripts() {
 	wp_enqueue_style( 'ladybirds-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bootstrap-grid', get_template_directory_uri().'/css/bootstrap-grid.min.css' );
+	wp_enqueue_style( 'theme-style', get_template_directory_uri().'/css/style.min.css' );
 
 	wp_enqueue_script( 'ladybirds-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
