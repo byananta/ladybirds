@@ -44,7 +44,7 @@ if ( ! function_exists( 'ladybirds_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'ladybirds' ),
+			'menu-1' => esc_html__( 'Main Menu', 'ladybirds' ),
 		) );
 
 		/*
@@ -110,9 +110,17 @@ function ladybirds_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'ladybirds' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<div class="lb-widget-title"><h5 class="widget-title">',
+		'after_title'   => '</h5></div>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header Ad Section', 'ladybirds' ),
+		'id'            => 'header-ad',
+		'description'   => esc_html__( 'If you want to plaese your ad in header then add ad widget here.', 'ladybirds' ),
+		'before_widget' => '<section id="%1$s" class="header-ad %2$s">',
+		'after_widget'  => '</section>',
+	));
 }
 add_action( 'widgets_init', 'ladybirds_widgets_init' );
 
