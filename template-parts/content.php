@@ -10,6 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php if (is_singular()): ?>
+		<?php ladybirds_post_thumbnail(); ?>
+	<?php endif; ?>
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -20,16 +25,18 @@
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta">
+			<div class="entry-meta d-flex align-items-center">
 				<?php
-				ladybirds_posted_on();
 				ladybirds_posted_by();
+				ladybirds_posted_on();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php ladybirds_post_thumbnail(); ?>
+	<?php if (!is_singular()): ?>
+		<?php ladybirds_post_thumbnail(); ?>
+	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php

@@ -8,9 +8,9 @@ $color__background-ins: #fff9c0;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: $color-primary;
+$color__link: $color-dark;
 $color__link-visited: $color-primary;
-$color__link-hover: darken($color-primary, 5%);
+$color__link-hover: $color-primary;
 $color__text-main: $color-dark;
 
 $color__border-button: #ccc #ccc #bbb;
