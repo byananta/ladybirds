@@ -52,6 +52,43 @@ if ( ! function_exists( 'ladybirds_posted_by' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'ladybirds_post_categories' )) {
+	function ladybirds_post_categories(){
+		// Hide category and tag text for pages.
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'ladybirds' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="cat-links"><i class="fa fa-folder fa-rotate-270"></i>' . esc_html__( ' %1$s', 'ladybirds' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+		}
+	}
+}
+
+if (!function_exists('ladybirds_post_comment_count')) {
+	function ladybirds_post_comment_count(){
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link"><i class="fa fa-comments"></i> ';
+			comments_popup_link(
+				sprintf(
+					wp_kses(
+						/* translators: %s: post title */
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'ladybirds' ),
+						array(
+							'span' => array(
+								'class' => array('ap'),
+							),
+						)
+					),
+					get_the_title()
+				)
+			);
+			echo '</span>';
+		}
+	}
+}
+
 if ( ! function_exists( 'ladybirds_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
@@ -60,37 +97,11 @@ if ( ! function_exists( 'ladybirds_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'ladybirds' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'ladybirds' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-			}
-
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'ladybirds' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( '', 'list item separator', 'ladybirds' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'ladybirds' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<div class="tags-links"><span class="tag-title">TAGS</span>' . esc_html__( ' %1$s', 'ladybirds' ) . '</div>', $tags_list ); // WPCS: XSS OK.
 			}
-		}
-
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'ladybirds' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
-			echo '</span>';
 		}
 
 		edit_post_link(
@@ -133,7 +144,7 @@ if ( ! function_exists( 'ladybirds_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+		<a class="post-thumbnail img-hover" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
 			the_post_thumbnail( 'post-thumbnail', array(
 				'alt' => the_title_attribute( array(

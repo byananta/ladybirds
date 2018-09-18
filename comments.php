@@ -20,31 +20,22 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area lb-comments">
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h3 class="comments-title border-bottom">
 			<?php
 			$ladybirds_comment_count = get_comments_number();
 			if ( '1' === $ladybirds_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'ladybirds' ),
-					'<span>' . get_the_title() . '</span>'
-				);
+				echo esc_html__( 'One Comment', 'ladybirds' );
 			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $ladybirds_comment_count, 'comments title', 'ladybirds' ) ),
-					number_format_i18n( $ladybirds_comment_count ),
-					'<span>' . get_the_title() . '</span>'
-				);
+				echo number_format_i18n( $ladybirds_comment_count ) . esc_html__( ' Comments', 'ladybirds');
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h3><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 

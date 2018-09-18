@@ -1,3 +1,6 @@
+*{
+  @include transition(all .3s linear);
+}
 /*--------------------------------------------------------------
 # Bootstrap Overright
 --------------------------------------------------------------*/
@@ -7,6 +10,26 @@
   }
 }
 
+/*--------------------------------------------------------------
+# Common Styles
+--------------------------------------------------------------*/
+$width:50px;
+$height:1px;
+.border-bottom{
+  position: relative;
+  border-bottom: $height solid $color-light;
+  padding-bottom: 10px;
+
+  &:after{
+    content: '';
+    width: $width;
+    height: $height;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    background: $color-primary;
+  }
+}
 /*--------------------------------------------------------------
 # Page Structure
 --------------------------------------------------------------*/
@@ -19,6 +42,8 @@
 --------------------------------------------------------------*/
 .blog article{
   margin-bottom: 40px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $color-light;
 }
 .entry-header{
   margin-bottom: 30px;
@@ -26,6 +51,13 @@
 
 .post-thumbnail{
   margin-bottom: 30px;
+  img{
+    width: 100%;
+    @include border-radius(5px);
+  }
+}
+
+.img-hover{
   display: block;
   line-height: 0;
   overflow: hidden;
@@ -56,9 +88,109 @@
   }
 }
 
-.posted-on{
+.posted-on,
+.cat-links,
+.comments-link{
   i{
     font-size: 20px;
     vertical-align: middle;
   }
+}
+
+.entry-footer{
+  margin-top: 30px;
+}
+
+.tags-links{
+  a, .tag-title{
+    color: $color-dark;
+    font-size: 14px;
+    display: inline-block;
+    padding: 3px 10px 0 10px;
+    margin-right: 5px;
+    line-height: normal;
+    @include border-radius(50px);
+    border: 1px solid $color-secondary;
+  }
+
+  a:hover{
+    border-color: $color-primary;
+  }
+
+  .tag-title{
+    background: $color-secondary;
+    color: white;
+  }
+}
+
+.post-navigation{
+  .nav-links{
+    display: flex;
+
+    .nav-previous,
+    .nav-next{
+      border:1px solid $color-light;
+      a{
+        padding:20px;
+        display: block;
+      }
+    }
+  }
+}
+
+.lb-comments{
+  margin-top: 80px;
+
+  ol{
+    list-style-type: none;
+    padding:0;
+
+    li{
+      .comment-body{
+        border-bottom: 1px solid $color-light;
+        padding:30px 0;
+
+        .comment-author{
+          display: flex;
+          align-items: center;
+
+          .avatar{
+            @include border-radius(100%);
+            margin-right: 10px;
+          }
+
+          .fn{
+            margin-right: 10px;
+          }
+        }
+
+        .comment-metadata{
+          margin: 15px 0;
+          a{
+            font-size: 14px;
+          }
+        }
+
+        .reply{
+          a{
+            @include border-radius(50px);
+            border: 1px solid $color-primary;
+            padding: 3px 10px;
+            line-height: normal;
+            font-size: 14px;
+            color: $color-primary;
+
+            &:hover{
+              color: #ffffff;
+              background-color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.comment-respond{
+  margin-top: 50px;
 }

@@ -29,6 +29,8 @@
 				<?php
 				ladybirds_posted_by();
 				ladybirds_posted_on();
+				ladybirds_post_comment_count();
+				ladybirds_post_categories();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
