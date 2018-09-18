@@ -76,7 +76,3 @@
 		</section>
 
 	</header><!-- #masthead -->
-	<?php
-	get_template_part( 'template-parts/content', 'innerheader' );
-	?>
-	<div id="content" class="site-content">

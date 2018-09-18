@@ -8,6 +8,7 @@
  */
 
 get_header();
+get_template_part( 'template-parts/content', 'innerheader' );śś
 ?>
 
 	<section id="primary" class="content-area container">

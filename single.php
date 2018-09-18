@@ -8,7 +8,7 @@
  */
 
 get_header();
-
+get_template_part( 'template-parts/content', 'innerheader' );
 ?>
 
 	<div id="primary" class="content-area container">

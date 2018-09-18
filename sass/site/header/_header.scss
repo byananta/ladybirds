@@ -1,3 +1,7 @@
+.site-header{
+  position: relative;
+  z-index: 9;
+}
 .header-logo-ad-wrapper{
   padding: 15px 0;
 }
@@ -9,4 +13,21 @@
 
 .header-menu{
   box-shadow: 0px 11px 20px -5px rgba(0,0,0,0.09);
+}
+
+/*--------------------------------------------------------------
+# Inner Header
+--------------------------------------------------------------*/
+.lb-innerheader{
+  position: relative;
+  padding: 30px 0;
+  background: #fbfbfb;
+  margin-bottom: 50px;
+
+  .page-title{
+    margin: 0;
+  }
+
+  .lb-breadcrumb{
+  }
 }
