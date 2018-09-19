@@ -6,15 +6,16 @@
 			var slideableMenuContainer = $('.header-menu');
 
 			var previousScroll = 0;
+			openBtn.addClass('show');
 			$(window).scroll(function(){
-				console.log($(this).scrollTop());
-				if ($(this).scrollTop() < previousScroll) {
-					openBtn.addClass('test');
+				var currentScroll = $(this).scrollTop();
+				if (currentScroll < previousScroll) {
+					openBtn.addClass('show');
 				}else{
-					openBtn.removeClass('test');
+					openBtn.removeClass('show');
 				}
 
-				previousScroll ++;
+				previousScroll = currentScroll;
 			});
 
 			openBtn.on('click', function(){
