@@ -46,6 +46,8 @@
 								?>
 								<p class="site-description"><?php echo $ladybirds_description; /* WPCS: xss ok. */ ?></p>
 							<?php endif; ?>
+
+
 						</div><!-- .site-branding -->
 					</div>
 
@@ -57,12 +59,18 @@
 			</div>
 		</section>
 
+		<div class="lb-mobile-menu-icon">
+			&#x2630;
+		</div>
+
 		<section class="header-menu">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
+						<div class="lb-mobile-menu-close">
+							<span>&times;</span>
+						</div>
 						<nav id="site-navigation" class="main-navigation">
-							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ladybirds' ); ?></button>
 							<?php
 							wp_nav_menu( array(
 								'theme_location' => 'menu-1',

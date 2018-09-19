@@ -1,6 +1,14 @@
 aside#secondary{
-	padding-left: 60px;
+	padding-left: 30px;
 }
+
+@media (max-width:991.5px){
+	aside#secondary{
+		padding-left: 15px;
+		margin-top: 50px;
+	}
+}
+
 .widget {
 	margin: 0 0 50px;
 
@@ -32,5 +40,21 @@ aside#secondary{
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
 		margin-left: -1px;
+	}
+}
+
+@media (max-width:991.5px){
+	.widget .search-form{
+		flex-direction: column;
+
+		.search-field{
+			width: 100%;
+			@include border-radius(3px);
+		}
+
+		.search-submit{
+			@include border-radius(3px);
+			margin:15px 0 0 0;
+		}
 	}
 }

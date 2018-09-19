@@ -13,7 +13,7 @@ get_template_part( 'template-parts/content', 'innerheader' );śś
 
 	<section id="primary" class="content-area container">
 		<div class="row">
-			<main id="main" class="site-main col-md-8">
+			<main id="main" class="site-main col-lg-8 col-md-12">
 
 			<?php if ( have_posts() ) : ?>
 
