@@ -25,10 +25,22 @@
 			closeBtn.on('click', function(){
 				slideableMenuContainer.removeClass('open');
 			});
+		},
+
+		lazyImages: function(){
+			var imgAttr = $('[data-lbimg]');
+			imgAttr.each(function(){
+				var bigImage = $(this).attr('data-lbimg');
+				$(this).attr('src', bigImage);
+			});
 		}
 	};
 
 	$(document).ready(function(){
 		ladybirdsTheme.slideNavigation();
+
+		$(window).load(function(){
+			ladybirdsTheme.lazyImages();
+		});
 	});
 })(jQuery)

@@ -45,11 +45,13 @@
     box-shadow: 0px 11px 20px -5px rgba(0,0,0,0.09);
     border: 1px solid $color-light;
     transform: translateX(200%);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 
     &.show{
       transform: translateX(0);
     }
-    
+
     span,
     span:before,
     span:after{
@@ -146,6 +148,8 @@
   .lb-mobile-menu-close{
     padding: 15px 0;
     display: inline-block;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
     span{
       width: 44px;
       height: 44px;
