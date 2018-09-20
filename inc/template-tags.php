@@ -139,7 +139,11 @@ if ( ! function_exists( 'ladybirds_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php
+				$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+				$full_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+				?>
+				<img src="<?php echo $thumbnail_url; ?>" alt="<?php echo get_the_title(); ?>" data-lbimg="<?php echo $full_url; ?>">
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
@@ -151,7 +155,7 @@ if ( ! function_exists( 'ladybirds_post_thumbnail' ) ) :
 			// 		'echo' => false,
 			// 	) ),
 			// ) );
-			$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), array(40, 40));
+			$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
 			$full_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 			?>
 			<img src="<?php echo $thumbnail_url; ?>" alt="<?php echo get_the_title(); ?>" data-lbimg="<?php echo $full_url; ?>">

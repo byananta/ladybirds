@@ -1,5 +1,7 @@
 *{
   @include transition(all .3s linear);
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 }
 /*--------------------------------------------------------------
 # Global Style
@@ -38,9 +40,24 @@ $height:1px;
   }
 }
 /*--------------------------------------------------------------
-# Page Structure
+# Buttons
 --------------------------------------------------------------*/
-.site-content{
+.lb-btn{
+
+}
+
+.lb-badge-primary{
+  padding: 4px 10px 2px;
+  border-radius: 50px;
+  font-size: 14px;
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  background-color: transparent;
+
+  &:hover{
+    background: $color-primary;
+    color: #ffffff;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -57,9 +74,19 @@ $height:1px;
 
 .post-thumbnail{
   margin-bottom: 30px;
+  @include border-radius(5px);
+  overflow: hidden;
   img{
     width: 100%;
     @include border-radius(5px);
+  }
+}
+
+.blur-img{
+  //height:450px;
+  overflow: hidden;
+  img{
+    filter: blur(100px);
   }
 }
 
