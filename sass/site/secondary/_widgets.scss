@@ -100,9 +100,11 @@ aside#secondary{
 .lb-post-slider{
 	position: relative;
 	overflow: hidden;
+	visibility: hidden;
 	.lb-post-slider-item{
 		position: relative;
     height: 100%;
+		min-height: 500px;
     background-size: cover;
     background-position: 50% 50%;
     overflow: hidden;
@@ -117,19 +119,48 @@ aside#secondary{
 			background: linear-gradient(to bottom,rgba(50,50,50,0) 0,rgba(16,15,15,0.91) 89%,rgba(16,15,15,0.93) 93%) !important;
 		}
 		.lb-post-slider-content{
-			padding: 300px 30px 30px 30px;
-			position: relative;
+			padding: 30px;
+			position: absolute;
+			width: 100%;
+			bottom: 0;
 			z-index: 2;
+
+			.post-category{
+				margin-bottom: 10px;
+				.cat-links{
+					a{
+						@extend .lb-badge-primary;
+					}
+					i{
+						display: none;
+					}
+				}
+			}
+
+			.post-title{
+				color: #ffffff;
+			}
+
+			.entry-meta{
+				display: flex;
+				a, i{
+					color: #ffffff;
+				}
+
+				@media (max-width: 767.5px){
+					flex-direction: row;
+				}
+			}
 		}
 	}
 
 	&:hover{
 		.lb-post-slider-arrow{
 			&.lb-arrow-prev{
-				transform: translateX(0);
+				transform: translate(0, -50%);
 			}
 			&.lb-arrow-next{
-				transform: translateX(0);
+				transform: translate(0, -50%);
 			}
 		}
 	}
@@ -158,16 +189,93 @@ aside#secondary{
 		position: absolute;
 		z-index: 50;
 		top: 50%;
-		transform: translateY(-50%);
 	}
 
 	&.lb-arrow-prev{
 		left: 20px;
-		transform: translateX(-150%);
+		transform: translate(-150%,-50%);
 	}
 
 	&.lb-arrow-next{
 		right: 20px;
-		transform: translateX(150%);
+		transform: translate(150%,-50%);
+	}
+}
+
+// Varaity post looks foe widget
+.lb-post-type-column{
+	@media (max-width:767.5px){
+		.entry-meta{
+			flex-direction: row;
+		}
+	}
+}
+.lb-post-type-list-thumb{
+	display: flex;
+	padding: 15px 0;
+	border-bottom: 1px solid $color-light;
+	&:first-child{
+		padding-top: 0;
+	}
+	&:last-child{
+		border-bottom: none;
+	}
+
+	.post-thumbnail{
+		margin-bottom: 0;
+		min-width: 120px;
+		width: 120px;
+		padding-right: 20px;
+		img{
+			display: block;
+		}
+	}
+
+	.entry-header{
+		margin-bottom: 0;
+	}
+
+	@media (max-width:767.5px){
+		.entry-meta{
+			display: none !important;
+		}
+	}
+}
+
+.lb-post-type-list{
+	margin-top: 50px;
+	.post-thumbnail{
+		margin-bottom: 0;
+		img{
+			display: block;
+		}
+	}
+
+	.entry-header{
+		margin-bottom: 15px;
+	}
+
+	.entry-content{
+		margin-top: 0;
+	}
+
+	@media (max-width:767.5px){
+		.post-thumbnail{
+			margin-bottom: 30px;
+		}
+		.entry-meta{
+			flex-direction: row;
+		}
+	}
+
+}
+
+// Grid Layout
+.lb-post-type-grid{
+	margin-bottom: 50px;
+	@media (max-width:767.5px){
+		.entry-meta{
+			flex-direction: row;
+		}
 	}
 }

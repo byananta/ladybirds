@@ -50,7 +50,7 @@
 				prevArrow:'<span class="lb-post-slider-arrow lb-arrow-prev"><i class="fa fa-angle-left"></i></span>',
 				nextArrow:'<span class="lb-post-slider-arrow lb-arrow-next"><i class="fa fa-angle-right"></i></span>',
 			  slidesToShow: 3,
-			  slidesToScroll: 1,
+			  slidesToScroll: 1 ,
 				responsive: [
 			    {
 			      breakpoint: 768,
@@ -71,6 +71,7 @@
 		ladybirdsTheme.postSlider();
 
 		$(window).load(function(){
+			$('.lb-post-slider').css('visibility', 'visible');
 			ladybirdsTheme.lazyImages();
 		});
 	});

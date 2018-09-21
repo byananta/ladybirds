@@ -121,6 +121,36 @@ function ladybirds_widgets_init() {
 		'before_widget' => '<section id="%1$s" class="header-ad %2$s">',
 		'after_widget'  => '</section>',
 	));
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Page Full Width', 'ladybirds' ),
+		'id'            => 'lb-home-page-full-width',
+		'description'   => esc_html__( 'All the widgets wiil be shown in home page.', 'ladybirds' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<div class="lb-widget-title"><h4 class="widget-title border-bottom">',
+		'after_title'   => '</h4></div>',
+	));
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Page Main', 'ladybirds' ),
+		'id'            => 'lb-home-page-main',
+		'description'   => esc_html__( 'All the widgets wiil be shown in home page.', 'ladybirds' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<div class="lb-widget-title"><h4 class="widget-title border-bottom">',
+		'after_title'   => '</h4></div>',
+	));
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Home Page Sidebar', 'ladybirds' ),
+		'id'            => 'lb-home-page-sidebar',
+		'description'   => esc_html__( 'All the widgets wiil be shown in home page.', 'ladybirds' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<div class="lb-widget-title"><h4 class="widget-title border-bottom">',
+		'after_title'   => '</h4></div>',
+	));
 }
 add_action( 'widgets_init', 'ladybirds_widgets_init' );
 

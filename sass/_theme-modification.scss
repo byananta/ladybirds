@@ -53,6 +53,8 @@ $height:1px;
   border: 1px solid $color-primary;
   color: $color-primary;
   background-color: transparent;
+  display: inline-block;
+  line-height: normal;
 
   &:hover{
     background: $color-primary;
