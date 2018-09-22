@@ -164,34 +164,11 @@ endif;
 if (! function_exists( 'ladybirds_get_breadcrumb' )) {
 
 	function ladybirds_get_breadcrumb() {
-		$separetor = "&nbsp;&nbsp;&bull;&nbsp;&nbsp;";
-	  echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
-	  if (is_category() || is_single()) {
-	      echo $separetor;
-			if( is_category() ){
-				single_term_title();
-			}elseif (is_single() ){
-				$cats = get_the_category( get_the_ID() );
-				$cat = array_shift($cats);
-				echo '<a href="' . esc_url( get_category_link( $cat->term_id ) ) . '" title="' . esc_attr( sprintf( __( "%s" ), $cat->name ) ) . '">'. $cat->name .'</a>';
-				echo $separetor;
-				the_title();
-			}
-	  }elseif (is_archive()) {
-	      echo $separetor;
-	      the_archive_title();;
-	  }elseif (is_tag()) {
-			echo $separetor;
-			single_term_title();
-	  }elseif (is_page()) {
-	      echo $separetor;
-	      the_title();
-	  } elseif (is_search()) {
-	      echo $separetor."Search Results for... ";
-	      echo '"<em>';
-	      echo the_search_query();
-	      echo '</em>"';
-	  }
+		include('breadcrumb.php');
+		breadcrumb_trail(array(
+			'show_browse'     => false,
+			'network' => true
+		));
 	}
 
 }

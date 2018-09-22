@@ -45,7 +45,7 @@
 		},
 
 		postSlider: function(){
-			$('.lb-post-slider').slick({
+			$('.lb-post-slider, .gallery').slick({
 			  infinite: true,
 				prevArrow:'<span class="lb-post-slider-arrow lb-arrow-prev"><i class="fa fa-angle-left"></i></span>',
 				nextArrow:'<span class="lb-post-slider-arrow lb-arrow-next"><i class="fa fa-angle-right"></i></span>',

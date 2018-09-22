@@ -181,5 +181,32 @@
   }
 
   .lb-breadcrumb{
+    nav{
+      ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li{
+          display: inline-block;
+          margin-right: 22px;
+          position: relative;
+          &:last-child{
+            margin-right: 0;
+          }
+          a{
+            display: block;
+            position: relative;
+            &:after{
+              content: '\2022';
+              color: $color-primary;
+              font-size: 22px;
+              position: absolute;
+              top: 0;
+              right: -15px;
+            }
+          }
+        }
+      }
+    }
   }
 }

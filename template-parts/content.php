@@ -42,7 +42,7 @@
 
 	<div class="entry-content">
 		<?php
-			if (!is_singular()) {
+			if (is_singular()) {
 				the_content( sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */

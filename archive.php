@@ -17,7 +17,7 @@ get_template_part( 'template-parts/content', 'innerheader' );
 			<main id="main" class="site-main col-lg-8 col-md-12">
 
 			<?php if ( have_posts() ) : ?>
-
+				
 				<?php
 				/* Start the Loop */
 				while ( have_posts() ) :
@@ -32,7 +32,10 @@ get_template_part( 'template-parts/content', 'innerheader' );
 
 				endwhile;
 
-				the_posts_navigation();
+				the_posts_pagination(array(
+					'prev_text' => __( '&#8592;', 'ladybirds' ),
+    			'next_text' => __( '	&#8594;', 'ladybirds' )
+				));
 
 			else :
 

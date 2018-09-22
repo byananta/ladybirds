@@ -191,6 +191,16 @@ function ladybirds_widgets_init() {
 		'before_title'  => '<div class="lb-widget-title"><h4 class="widget-title border-bottom">',
 		'after_title'   => '</h4></div>',
 	));
+
+	register_sidebar( array(
+		'name'          => esc_html__( '404 page widget', 'ladybirds' ),
+		'id'            => 'lb-404-page-widget',
+		'description'   => esc_html__( '404 page widget section. Ifa page not found then these content will be shown.', 'ladybirds' ),
+		'before_widget' => '<section id="%1$s" class="lb-copyright-widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<div class="lb-widget-title"><h4 class="widget-title border-bottom">',
+		'after_title'   => '</h4></div>',
+	));
 }
 add_action( 'widgets_init', 'ladybirds_widgets_init' );
 

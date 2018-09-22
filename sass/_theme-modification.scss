@@ -39,6 +39,13 @@ $height:1px;
     background: $color-primary;
   }
 }
+
+blockquote{
+  background: #efefef;
+  padding: 30px;
+  font-size: 22px;
+  @include border-radiuses(0, 50px, 50px, 50px);
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -87,7 +94,7 @@ $height:1px;
 /*--------------------------------------------------------------
 # Posts
 --------------------------------------------------------------*/
-.blog article{
+.blog article.post{
   margin-bottom: 40px;
   padding-bottom: 15px;
   border-bottom: 1px solid $color-light;
@@ -198,6 +205,31 @@ $height:1px;
   }
 }
 
+.pagination{
+  .nav-links{
+    a, span{
+      width: 44px;
+      height: 44px;
+      @include border-radius(100%);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: $color-dark;
+      border: 1px solid $color-light;
+
+      &:hover{
+        box-shadow: 0px 11px 20px -5px rgba(0,0,0,0.09);
+      }
+    }
+
+    .current{
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+  }
+}
+
+
 @media (max-width:767.5px){
   .entry-meta{
     flex-direction: column;
@@ -235,6 +267,10 @@ $height:1px;
   }
   .comment-respond{
     margin-top: 0;
+  }
+
+  > ol.comment-list{
+    margin-bottom: 50px;
   }
 
   ol{

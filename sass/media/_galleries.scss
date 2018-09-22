@@ -1,5 +1,18 @@
 .gallery {
 	margin-bottom: 1.5em;
+	position: relative;
+	overflow: hidden;
+
+	&:hover{
+		.lb-post-slider-arrow{
+			&.lb-arrow-prev{
+				transform: translate(0, -50%);
+			}
+			&.lb-arrow-next{
+				transform: translate(0, -50%);
+			}
+		}
+	}
 }
 
 .gallery-item {
@@ -8,12 +21,16 @@
 	vertical-align: top;
 	width: 100%;
 
-	// Loops to enumerate the classes for gallery columns.
-	@for $i from 2 through 9 {
-		.gallery-columns-#{$i} & {
-			max-width: map-get( $columns, $i );
-		}
+	.gallery-icon img{
+		width: 100%;
 	}
+
+	// // Loops to enumerate the classes for gallery columns.
+	// @for $i from 2 through 9 {
+	// 	.gallery-columns-#{$i} & {
+	// 		max-width: map-get( $columns, $i );
+	// 	}
+	// }
 }
 
 .gallery-caption {

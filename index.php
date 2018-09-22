@@ -44,7 +44,10 @@ get_template_part( 'template-parts/content', 'innerheader' );
 
 				endwhile;
 
-				the_posts_navigation();
+				the_posts_pagination(array(
+					'prev_text' => __( '&#8592;', 'ladybirds' ),
+    			'next_text' => __( '	&#8594;', 'ladybirds' )
+				));
 
 			else :
 
