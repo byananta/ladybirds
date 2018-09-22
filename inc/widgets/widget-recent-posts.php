@@ -48,7 +48,7 @@ class LB_Recent_Post_Widget extends WP_Widget {
           <?php endif; ?>
 
           <div class="lb-post-desc">
-            <h6 class="post-title"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h6>
+            <h5 class="post-title"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h5>
             <?php ladybirds_posted_on(); ?>
           </div>
         </article>

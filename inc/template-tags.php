@@ -150,11 +150,6 @@ if ( ! function_exists( 'ladybirds_post_thumbnail' ) ) :
 
 		<a class="post-thumbnail img-hover" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
-			// the_post_thumbnail( 'post-thumbnail', array(
-			// 	'alt' => the_title_attribute( array(
-			// 		'echo' => false,
-			// 	) ),
-			// ) );
 			$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
 			$full_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 			?>

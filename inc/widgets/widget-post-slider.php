@@ -49,7 +49,7 @@ class LB_Post_Slider extends WP_Widget {
             <a href="<?php echo get_the_permalink(); ?>">
               <h4 class="post-title"><?php echo get_the_title(); ?></h4>
             </a>
-						<?php if ($instance['autoplay'] == 'on'): ?>
+						<?php if ($instance['hide_meta'] != 'on'): ?>
 							<div class="entry-meta">
 								<?php ladybirds_posted_by(); ?>
 								<?php ladybirds_posted_on(); ?>

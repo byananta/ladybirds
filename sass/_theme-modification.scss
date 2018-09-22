@@ -40,6 +40,28 @@ $height:1px;
   }
 }
 /*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-footer{
+  padding-top: 100px;
+  margin-top: 50px;
+  border:1px solid $color-light;
+}
+
+.lb-copyright-footer{
+  padding: 20px 0;
+  background: $color-primary;
+  color: #ffffff;
+  .lb-copyright-widget{
+    p{
+      margin: 0;
+      color: #ffffff;
+    }
+  }
+}
+
+
+/*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
 .lb-btn{
@@ -112,6 +134,9 @@ $height:1px;
 .entry-meta{
   > span{
     padding-right: 15px;
+    a{
+      font-size: 14px;
+    }
   }
 }
 .post-author{
@@ -199,6 +224,18 @@ $height:1px;
 
 .lb-comments{
   margin-top: 80px;
+  background: #f9f9f9;
+  padding: 30px;
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"]{
+    width: 100%;
+  }
+  .comment-respond{
+    margin-top: 0;
+  }
 
   ol{
     list-style-type: none;

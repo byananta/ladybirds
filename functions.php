@@ -151,6 +151,46 @@ function ladybirds_widgets_init() {
 		'before_title'  => '<div class="lb-widget-title"><h4 class="widget-title border-bottom">',
 		'after_title'   => '</h4></div>',
 	));
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widget Column One', 'ladybirds' ),
+		'id'            => 'lb-footer-widget-1',
+		'description'   => esc_html__( 'First column of footer.', 'ladybirds' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<div class="lb-widget-title"><h4 class="widget-title border-bottom">',
+		'after_title'   => '</h4></div>',
+	));
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widget Column Two', 'ladybirds' ),
+		'id'            => 'lb-footer-widget-2',
+		'description'   => esc_html__( 'Second column of footer.', 'ladybirds' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<div class="lb-widget-title"><h4 class="widget-title border-bottom">',
+		'after_title'   => '</h4></div>',
+	));
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widget Column Third', 'ladybirds' ),
+		'id'            => 'lb-footer-widget-3',
+		'description'   => esc_html__( 'Third column of footer.', 'ladybirds' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<div class="lb-widget-title"><h4 class="widget-title border-bottom">',
+		'after_title'   => '</h4></div>',
+	));
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Copyright Footer Section', 'ladybirds' ),
+		'id'            => 'lb-copyright-footer-widget',
+		'description'   => esc_html__( 'Copyright Section', 'ladybirds' ),
+		'before_widget' => '<section id="%1$s" class="lb-copyright-widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<div class="lb-widget-title"><h4 class="widget-title border-bottom">',
+		'after_title'   => '</h4></div>',
+	));
 }
 add_action( 'widgets_init', 'ladybirds_widgets_init' );
 

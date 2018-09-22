@@ -12,15 +12,32 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ladybirds' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'ladybirds' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-		</div><!-- .site-info -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<?php dynamic_sidebar( 'lb-footer-widget-1' ); ?>
+				</div>
+
+				<div class="col-md-4">
+					<?php dynamic_sidebar( 'lb-footer-widget-2' ); ?>
+				</div>
+
+				<div class="col-md-4">
+					<?php dynamic_sidebar( 'lb-footer-widget-3' ); ?>
+				</div>
+
+			</div>
+		</div>
+
+		<section class="lb-copyright-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<?php dynamic_sidebar( 'lb-copyright-footer-widget' ); ?>
+					</div>
+				</div>
+			</div>
+		</section>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
