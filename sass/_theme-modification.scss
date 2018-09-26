@@ -138,6 +138,15 @@ blockquote{
   }
 }
 
+.entry-content{
+  a{
+    color: $color-info;
+    &:hover{
+      color:darken($color-info, 5%);
+    }
+  }
+}
+
 .entry-meta{
   > span{
     padding-right: 15px;

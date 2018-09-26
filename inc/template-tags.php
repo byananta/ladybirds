@@ -148,7 +148,7 @@ if ( ! function_exists( 'ladybirds_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
-		<a class="post-thumbnail img-hover" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
 			$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
 			$full_url = get_the_post_thumbnail_url(get_the_ID(), 'full');

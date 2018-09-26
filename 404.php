@@ -23,6 +23,6 @@ get_template_part( 'template-parts/content', 'innerheader' );
 			<?php get_sidebar(); ?>
 		</div>
 	</div><!-- #primary -->
-
+	
 <?php
 get_footer();
